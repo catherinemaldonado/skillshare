@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+
+@mixin border-radius($a, $b, $c, $d) {
+  -moz-border-radius: $a $b $c $d;
+  -webkit-border-top-left-radius: $a;
+  -webkit-border-top-right-radius: $b;
+  -webkit-border-bottom-right-radius: $c;
+  -webkit-border-bottom-left-radius: $d;
+  border-radius: $a $b $c $d;
+}
+
+// variables for spacing
+$padding: 5px;
+// color variables
+$gray: #666;
+// timing variable
+$duration: 5s;
+
+body{
+  font-family: Montserrat, sans-serif;
+}
+.resource{
+  text-decoration:none;
+  color:#fff;
+  background-color: #e29917;
+  padding:$padding*2;
+  display:table;
+  border-bottom: 4px solid #e29917;
+  float:left;
+  margin: 5px;
+  &:hover{
+    border-bottom:4px solid #000;
+  }
+}
+
+.grid{ 
+  grid-template-columns: 1fr 1fr;
+  max-width:60%;
+  grid-row-gap:10px;
+  grid-column-gap:10px;
+  img{
+    max-width:100%;
+  }
+}
+
+#test-grid, #grid-1, #grid-2, #grid-3{
+  margin:0 auto 20px auto;
+  padding:0;
+  display:grid;
+  list-style-type:none;
+}
+
+$tablet: 800px;
+$phone: 400px;
+
+#test-grid{
+  
+  
+  // phone
+  grid-template-columns: 50% 1fr;
+
+  //   tablet +
+  @media (min-width: $phone) {
+    grid-template-columns: 50% 1fr 1fr;
+  }
+
+  // desktop +
+  @media (min-width: $tablet) {
+
+  }
+  .snoopy{
+    grid-area: 1 / 1 / span 4 / span 1;
+  }
+  
+}
+
+#grid-1{
+  .title{
+    position:absolute;
+    left:0;
+    bottom:0;
+    color:#fff;
+  }
+  li{
+    position: relative;
+    align-self:end;
+    // background: $gray;
+    // @include border-radius(20px, 5px, 2px, 30px);
+    // padding:$padding*2;
+    // border-radius: 5px 10px 20px 30px;
+  }
+  .dots{
+    border-bottom: 2px dotted #000;
+  }
+  img{
+    max-width:100px;
+  }
+}
+
+
+#grid-2{
+  max-width:350px;
+  border: 1px solid;
+  li{
+    border: 1px solid;
+  }
+  img{
+    opacity:.5;
+  }
+  .square{
+    
+  }
+  .triangle{
+    
+  }
+  .circle{
+    
+  }
+}
+
+
+@mixin groupedstyles($size, $style, $opacity){
+  border: $size $style;
+  background-color: rgba(236,219,19,$opacity);
+}
+
+#grid-3{
+  .logo{
+    
+  }
+}

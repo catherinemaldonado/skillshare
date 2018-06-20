@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <script id="tile-template" type="text/x-handlebars-template">
+
+  <h1>{{headline}}</h1>
+  {{#list links}}
+  <div class="tile">
+    <div class="front face"><img src="{{front}}">
+      {{title}}
+  </div> 
+    <a href="{{link}}">
+      <div class="hidden face">{{hidden}}</div>
+    </a>
+    </div>
+  {{/list}}
+
+</script>
+
+<div id="content"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

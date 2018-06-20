@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+@mixin flipcontainer {
+  -webkit-transform: translateZ(1px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height:100%;
+  width:100%;
+  position:relative;
+}
+
+@mixin flippingface {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top:0;
+  width:100%;
+}
+
+@mixin rotatevertical{
+  -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+$tablet: 800px;
+$phone: 400px;
+
+html{
+  font-family: Lato, sans-serif;
+}
+body{
+  
+}
+.front{
+  img{
+    max-width:200px;
+  }
+}
+.hidden{
+  // display:none;
+  // opacity:0;
+}
+
+.link-grid{
+  // phone
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  //overriding default list styles
+  list-style-type:none;
+  padding:0;
+
+  //   tablet +
+  @media (min-width: $phone) {
+    
+  }
+
+  // desktop +
+  @media (min-width: $tablet) {
+
+  }
+}
+
+.link-grid li{
+  
+  // for 3D animations
+  // min-height:30px;
+  // display:block;
+  // position:relative;
+}
+
+.tile{
+  overflow:hidden;
+  position:relative;
+}
+
+.face{ 
+  width:100%;
+}
+
+// add animations / transitions in here
+.link-grid li:hover .tile, .animate .tile{
+  .hidden{
+    
+  }
+}
